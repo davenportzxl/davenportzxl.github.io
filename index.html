@@ -1,0 +1,1633 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="张晓璐 - 正高级工程师，医疗AI与大数据专家">
+    <meta name="keywords" content="张晓璐, Zhang Xiaolu, 医疗AI, 大数据, 深圳妇幼保健院">
+    <title>张晓璐 Zhang Xiaolu - 个人主页</title>
+    <style>
+        /* ============================================
+           基础样式与CSS变量
+           ============================================ */
+        :root {
+            --primary-color: #1a3557;
+            --secondary-color: #2e7d9f;
+            --bg-color: #fafafa;
+            --text-color: #333;
+            --text-light: #666;
+            --border-color: #e0e0e0;
+            --card-bg: #ffffff;
+            --shadow-sm: 0 2px 4px rgba(0,0,0,0.05);
+            --shadow-md: 0 4px 12px rgba(0,0,0,0.1);
+            --shadow-lg: 0 8px 24px rgba(0,0,0,0.15);
+            --font-serif: Georgia, 'Times New Roman', serif;
+            --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            line-height: 1.7;
+            font-size: 16px;
+        }
+
+        /* ============================================
+           导航栏样式
+           ============================================ */
+        .sidebar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 280px;
+            height: 100vh;
+            background: var(--primary-color);
+            color: white;
+            padding: 40px 30px;
+            z-index: 1000;
+            overflow-y: auto;
+            transition: var(--transition);
+        }
+
+        .sidebar-header {
+            margin-bottom: 50px;
+        }
+
+        .sidebar-header h2 {
+            font-family: var(--font-serif);
+            font-size: 28px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            letter-spacing: 1px;
+        }
+
+        .sidebar-header .subtitle {
+            font-size: 14px;
+            opacity: 0.85;
+            line-height: 1.6;
+        }
+
+        .nav-menu {
+            list-style: none;
+        }
+
+        .nav-menu li {
+            margin-bottom: 8px;
+        }
+
+        .nav-menu a {
+            display: block;
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            padding: 12px 16px;
+            border-radius: 6px;
+            transition: var(--transition);
+            font-size: 15px;
+            font-weight: 500;
+        }
+
+        .nav-menu a:hover,
+        .nav-menu a.active {
+            background: rgba(255, 255, 255, 0.15);
+            color: white;
+            transform: translateX(4px);
+        }
+
+        /* 移动端菜单按钮 */
+        .mobile-menu-btn {
+            display: none;
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 1001;
+            background: var(--primary-color);
+            border: none;
+            color: white;
+            padding: 12px 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            box-shadow: var(--shadow-md);
+        }
+
+        .mobile-menu-btn span {
+            display: block;
+            width: 24px;
+            height: 2px;
+            background: white;
+            margin: 5px 0;
+            transition: var(--transition);
+        }
+
+        /* ============================================
+           主内容区
+           ============================================ */
+        .main-content {
+            margin-left: 280px;
+            min-height: 100vh;
+        }
+
+        .section {
+            padding: 80px 60px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-family: var(--font-serif);
+            font-size: 36px;
+            color: var(--primary-color);
+            margin-bottom: 40px;
+            padding-bottom: 16px;
+            border-bottom: 3px solid var(--secondary-color);
+            display: inline-block;
+        }
+
+        /* ============================================
+           Hero 区
+           ============================================ */
+        #hero {
+            background: linear-gradient(135deg, #1a3557 0%, #2e7d9f 100%);
+            color: white;
+            padding: 120px 60px 80px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        #hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><circle cx="100" cy="100" r="100" fill="rgba(255,255,255,0.03)"/><circle cx="1000" cy="400" r="150" fill="rgba(255,255,255,0.03)"/><circle cx="600" cy="500" r="80" fill="rgba(255,255,255,0.03)"/></svg>') no-repeat center;
+            opacity: 0.5;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-name {
+            font-family: var(--font-serif);
+            font-size: 56px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            letter-spacing: 2px;
+        }
+
+        .hero-name-en {
+            font-size: 32px;
+            opacity: 0.9;
+            margin-bottom: 24px;
+            font-weight: 400;
+        }
+
+        .hero-title {
+            font-size: 20px;
+            margin-bottom: 16px;
+            opacity: 0.95;
+            font-weight: 500;
+        }
+
+        .hero-institution {
+            font-size: 18px;
+            margin-bottom: 30px;
+            opacity: 0.85;
+        }
+
+        .hero-contact {
+            margin-bottom: 40px;
+        }
+
+        .hero-contact a {
+            color: white;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            padding: 12px 24px;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 8px;
+            transition: var(--transition);
+            font-size: 16px;
+        }
+
+        .hero-contact a:hover {
+            background: rgba(255, 255, 255, 0.25);
+            transform: translateY(-2px);
+        }
+
+        .hero-contact svg {
+            width: 20px;
+            height: 20px;
+            margin-right: 8px;
+        }
+
+        /* 研究方向标签云 */
+        .tags-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 12px;
+            margin-top: 30px;
+        }
+
+        .tag {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 8px 18px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 500;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        /* ============================================
+           About 区 - 统计卡片
+           ============================================ */
+        .about-intro {
+            font-size: 18px;
+            line-height: 1.8;
+            color: var(--text-light);
+            margin-bottom: 50px;
+            text-align: justify;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .stat-card {
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: var(--shadow-md);
+            transition: var(--transition);
+            border-top: 4px solid var(--secondary-color);
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .stat-number {
+            font-size: 42px;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 8px;
+            font-family: var(--font-serif);
+        }
+
+        .stat-label {
+            font-size: 16px;
+            color: var(--text-light);
+            font-weight: 500;
+        }
+
+        /* ============================================
+           时间轴样式（教育、工作经历）
+           ============================================ */
+        .timeline {
+            position: relative;
+            padding-left: 40px;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: var(--border-color);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 40px;
+            padding-left: 30px;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -43px;
+            top: 5px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--secondary-color);
+            border: 3px solid var(--bg-color);
+            box-shadow: 0 0 0 3px var(--secondary-color);
+        }
+
+        .timeline-date {
+            font-weight: 600;
+            color: var(--secondary-color);
+            font-size: 14px;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .timeline-title {
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 6px;
+        }
+
+        .timeline-subtitle {
+            font-size: 16px;
+            color: var(--text-light);
+            margin-bottom: 8px;
+        }
+
+        .timeline-description {
+            font-size: 15px;
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        .timeline-bullets {
+            list-style: none;
+            margin-top: 12px;
+        }
+
+        .timeline-bullets li {
+            padding-left: 20px;
+            position: relative;
+            margin-bottom: 6px;
+            color: var(--text-light);
+            font-size: 15px;
+        }
+
+        .timeline-bullets li::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: var(--secondary-color);
+            font-weight: bold;
+        }
+
+        /* ============================================
+           项目卡片
+           ============================================ */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .project-card {
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+            border-left: 4px solid var(--secondary-color);
+        }
+
+        .project-card:hover {
+            box-shadow: var(--shadow-lg);
+            transform: translateY(-3px);
+        }
+
+        .project-header {
+            margin-bottom: 16px;
+        }
+
+        .project-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 8px;
+        }
+
+        .project-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+            font-size: 14px;
+            color: var(--text-light);
+            margin-bottom: 12px;
+        }
+
+        .project-meta-item {
+            display: flex;
+            align-items: center;
+        }
+
+        .project-meta-item strong {
+            color: var(--text-color);
+            margin-right: 6px;
+        }
+
+        .project-role {
+            display: inline-block;
+            padding: 4px 12px;
+            background: var(--secondary-color);
+            color: white;
+            border-radius: 12px;
+            font-size: 13px;
+            font-weight: 500;
+        }
+
+        /* ============================================
+           关键成果卡片
+           ============================================ */
+        .achievements-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
+
+        .achievement-card {
+            background: linear-gradient(135deg, var(--card-bg) 0%, #f8f9fa 100%);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: var(--shadow-md);
+            transition: var(--transition);
+            border-top: 4px solid var(--primary-color);
+        }
+
+        .achievement-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .achievement-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 16px;
+        }
+
+        .achievement-metrics {
+            list-style: none;
+        }
+
+        .achievement-metrics li {
+            padding: 10px 0;
+            border-bottom: 1px solid var(--border-color);
+            font-size: 15px;
+            color: var(--text-light);
+        }
+
+        .achievement-metrics li:last-child {
+            border-bottom: none;
+        }
+
+        .metric-highlight {
+            color: var(--secondary-color);
+            font-weight: 700;
+            font-size: 18px;
+        }
+
+        /* ============================================
+           论文列表
+           ============================================ */
+        .publications-list {
+            list-style: none;
+            counter-reset: pub-counter;
+        }
+
+        .publication-item {
+            counter-increment: pub-counter;
+            position: relative;
+            padding: 20px;
+            padding-left: 60px;
+            margin-bottom: 24px;
+            background: var(--card-bg);
+            border-radius: 8px;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+        }
+
+        .publication-item:hover {
+            box-shadow: var(--shadow-md);
+            transform: translateX(4px);
+        }
+
+        .publication-item::before {
+            content: counter(pub-counter);
+            position: absolute;
+            left: 20px;
+            top: 20px;
+            width: 32px;
+            height: 32px;
+            background: var(--secondary-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 14px;
+        }
+
+        .publication-authors {
+            font-weight: 600;
+            color: var(--text-color);
+            margin-bottom: 6px;
+        }
+
+        .publication-title {
+            font-size: 16px;
+            color: var(--primary-color);
+            margin-bottom: 6px;
+            line-height: 1.5;
+        }
+
+        .publication-venue {
+            font-style: italic;
+            color: var(--text-light);
+            margin-bottom: 8px;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-right: 6px;
+        }
+
+        .badge-sci {
+            background: #d32f2f;
+            color: white;
+        }
+
+        .badge-ccf {
+            background: #1976d2;
+            color: white;
+        }
+
+        .badge-ei {
+            background: #388e3c;
+            color: white;
+        }
+
+        /* ============================================
+           专利折叠列表
+           ============================================ */
+        .patents-list {
+            list-style: none;
+        }
+
+        .patent-item {
+            padding: 16px 20px;
+            margin-bottom: 12px;
+            background: var(--card-bg);
+            border-radius: 8px;
+            border-left: 3px solid var(--secondary-color);
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+        }
+
+        .patent-item:hover {
+            box-shadow: var(--shadow-md);
+        }
+
+        .patent-title {
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 6px;
+            font-size: 15px;
+        }
+
+        .patent-number {
+            font-size: 13px;
+            color: var(--text-light);
+            font-family: 'Courier New', monospace;
+        }
+
+        .patents-toggle {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .toggle-btn {
+            background: var(--secondary-color);
+            color: white;
+            border: none;
+            padding: 12px 32px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 15px;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .toggle-btn:hover {
+            background: var(--primary-color);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        /* ============================================
+           奖项列表
+           ============================================ */
+        .awards-list {
+            list-style: none;
+        }
+
+        .award-item {
+            display: flex;
+            align-items: flex-start;
+            padding: 24px;
+            margin-bottom: 20px;
+            background: var(--card-bg);
+            border-radius: 8px;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+        }
+
+        .award-item:hover {
+            box-shadow: var(--shadow-md);
+            transform: translateX(4px);
+        }
+
+        .award-icon {
+            font-size: 32px;
+            margin-right: 20px;
+            flex-shrink: 0;
+        }
+
+        .award-content {
+            flex: 1;
+        }
+
+        .award-year {
+            font-weight: 600;
+            color: var(--secondary-color);
+            font-size: 14px;
+            margin-bottom: 6px;
+        }
+
+        .award-title {
+            font-size: 17px;
+            color: var(--primary-color);
+            font-weight: 600;
+            line-height: 1.5;
+        }
+
+        /* ============================================
+           页脚
+           ============================================ */
+        footer {
+            background: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+            margin-left: 280px;
+        }
+
+        footer p {
+            opacity: 0.85;
+            font-size: 14px;
+        }
+
+        /* ============================================
+           响应式设计
+           ============================================ */
+        @media (max-width: 1024px) {
+            .sidebar {
+                transform: translateX(-100%);
+            }
+
+            .sidebar.active {
+                transform: translateX(0);
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .main-content {
+                margin-left: 0;
+            }
+
+            footer {
+                margin-left: 0;
+            }
+
+            .section {
+                padding: 60px 30px;
+            }
+
+            #hero {
+                padding: 100px 30px 60px;
+            }
+
+            .hero-name {
+                font-size: 42px;
+            }
+
+            .hero-name-en {
+                font-size: 26px;
+            }
+
+            .section-title {
+                font-size: 30px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .section {
+                padding: 50px 20px;
+            }
+
+            #hero {
+                padding: 90px 20px 50px;
+            }
+
+            .hero-name {
+                font-size: 36px;
+            }
+
+            .hero-name-en {
+                font-size: 22px;
+            }
+
+            .hero-title {
+                font-size: 18px;
+            }
+
+            .section-title {
+                font-size: 26px;
+            }
+
+            .stats-grid,
+            .projects-grid,
+            .achievements-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .timeline {
+                padding-left: 20px;
+            }
+
+            .timeline-item {
+                padding-left: 20px;
+            }
+
+            .timeline-item::before {
+                left: -26px;
+            }
+        }
+
+        /* ============================================
+           打印样式
+           ============================================ */
+        @media print {
+            .sidebar,
+            .mobile-menu-btn {
+                display: none;
+            }
+
+            .main-content {
+                margin-left: 0;
+            }
+
+            .section {
+                page-break-inside: avoid;
+                padding: 40px 20px;
+            }
+
+            .project-card,
+            .achievement-card,
+            .publication-item,
+            .award-item {
+                box-shadow: none;
+                border: 1px solid var(--border-color);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ============================================
+         移动端菜单按钮
+         ============================================ -->
+    <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+
+    <!-- ============================================
+         侧边导航栏
+         ============================================ -->
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <h2>张晓璐</h2>
+            <p class="subtitle">正高级工程师<br>医疗AI与大数据专家</p>
+        </div>
+        <nav>
+            <ul class="nav-menu">
+                <li><a href="#hero" class="nav-link">首页 Home</a></li>
+                <li><a href="#about" class="nav-link">关于 About</a></li>
+                <li><a href="#education" class="nav-link">教育 Education</a></li>
+                <li><a href="#experience" class="nav-link">经历 Experience</a></li>
+                <li><a href="#research" class="nav-link">科研项目 Research</a></li>
+                <li><a href="#achievements" class="nav-link">技术成果 Achievements</a></li>
+                <li><a href="#publications" class="nav-link">论文 Publications</a></li>
+                <li><a href="#patents" class="nav-link">专利 Patents</a></li>
+                <li><a href="#awards" class="nav-link">荣誉 Awards</a></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <!-- ============================================
+         主内容区
+         ============================================ -->
+    <main class="main-content">
+
+        <!-- ============================================
+             Hero 区
+             ============================================ -->
+        <section id="hero">
+            <div class="hero-content">
+                <h1 class="hero-name">张晓璐</h1>
+                <p class="hero-name-en">Zhang Xiaolu</p>
+                <p class="hero-title">正高级工程师 / Professor-level Senior Engineer | 博士 PhD</p>
+                <p class="hero-institution">深圳市妇幼保健院 大数据中心主任<br>Director, Big Data Center, Shenzhen Maternity & Child Healthcare Hospital</p>
+                <div class="hero-contact">
+                    <a href="mailto:13910633707@139.com">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                        </svg>
+                        13910633707@139.com
+                    </a>
+                </div>
+                <div class="tags-container">
+                    <span class="tag">医疗AI</span>
+                    <span class="tag">大数据治理</span>
+                    <span class="tag">医学影像分析</span>
+                    <span class="tag">NLP与电子病历</span>
+                    <span class="tag">知识图谱</span>
+                    <span class="tag">AIGC大模型</span>
+                    <span class="tag">隐私计算</span>
+                    <span class="tag">联邦学习</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================
+             About 区
+             ============================================ -->
+        <section id="about" class="section">
+            <h2 class="section-title">关于我 About Me</h2>
+            <p class="about-intro">
+                专注于大数据与AI在医疗健康行业的应用落地，拥有20余年信息化与数据科学从业经验。曾任艾瑞数智首席数据官（CDO）、泰康集团AI领军人物、创新工场AI工程院医疗Lab技术总监。主导医疗大数据平台、智能影像分析、电子病历智能处理等多个国家级与企业级重大项目，累计主导项目经费逾2.3亿元。荣获世界互联网大会"中国30位新生代数字经济人才"称号，在IEEE顶级期刊与会议发表高水平论文10篇，申报专利30余项。致力于推动医疗AI技术创新与产业化落地，为健康中国战略贡献力量。
+            </p>
+
+            <!-- 统计卡片 -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">10+</div>
+                    <div class="stat-label">学术论文</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">30+</div>
+                    <div class="stat-label">授权专利</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">2.3亿+</div>
+                    <div class="stat-label">项目经费（元）</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">7项</div>
+                    <div class="stat-label">重要荣誉</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================
+             教育背景
+             ============================================ -->
+        <section id="education" class="section">
+            <h2 class="section-title">教育背景 Education</h2>
+            <div class="timeline">
+                <!-- 教育1 -->
+                <div class="timeline-item">
+                    <div class="timeline-date">2017-09 至 2020-08</div>
+                    <h3 class="timeline-title">清华大学 Tsinghua University</h3>
+                    <p class="timeline-subtitle">工商管理硕士（MBA）</p>
+                    <p class="timeline-description">
+                        清华大学校长杯创业大赛第一名（镁伽机器人）（2017年）
+                    </p>
+                </div>
+
+                <!-- 教育2 -->
+                <div class="timeline-item">
+                    <div class="timeline-date">2005-08 至 2008-04</div>
+                    <h3 class="timeline-title">新加坡国立大学 National University of Singapore</h3>
+                    <p class="timeline-subtitle">计算机与电子工程 博士 PhD</p>
+                    <p class="timeline-description">
+                        新加坡政府全额奖学金，GPA 4.83/5.00，系排名第一<br>
+                        导师：Prof. Meixia Tao (IEEE Fellow), Prof. C.S. Ng<br>
+                        三年完成硕博连读
+                    </p>
+                </div>
+
+                <!-- 教育3 -->
+                <div class="timeline-item">
+                    <div class="timeline-date">2001-09 至 2005-07</div>
+                    <h3 class="timeline-title">北京邮电大学 Beijing University of Posts and Telecommunications</h3>
+                    <p class="timeline-subtitle">通信工程 学士 BEng</p>
+                    <p class="timeline-description">
+                        班级GPA第一，导师：张平院士
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================
+             工作经历
+             ============================================ -->
+        <section id="experience" class="section">
+            <h2 class="section-title">工作经历 Professional Experience</h2>
+            <div class="timeline">
+                <!-- 经历1 -->
+                <div class="timeline-item">
+                    <div class="timeline-date">2025-08 至 今</div>
+                    <h3 class="timeline-title">深圳市妇幼保健院 Shenzhen Maternity & Child Healthcare Hospital</h3>
+                    <p class="timeline-subtitle">大数据中心主任 / 教授级高级工程师</p>
+                    <ul class="timeline-bullets">
+                        <li>主导建设医院大数据平台、基于鸿蒙生态的全流程智慧服务平台</li>
+                        <li>负责院企联合研发连理・安娩——产科临床诊疗决策专用大模型、连理・衡章——病程智能质控智能体、连理・枢宁——运营决策大模型</li>
+                        <li>负责自研GCP问答智能体、通用无代码的临床预测模型构建平台等 </li>
+                    </ul>
+                </div>
+
+                <!-- 经历2 -->
+                <div class="timeline-item">
+                    <div class="timeline-date">2023-06 至 2025-07</div>
+                    <h3 class="timeline-title">艾瑞数智</h3>
+                    <p class="timeline-subtitle">首席数据官（CDO）/ 数据智能中心总经理</p>
+                    <ul class="timeline-bullets">
+                        <li>构建统一数据共享服务平台与数据智能产品体系</li>
+                        <li>主导AIGC大模型应用（MaaS、Agent平台）研发</li>
+                        <li>推动标准化数据智能产品商业化落地，年化产品订单逾6000万元</li>
+                    </ul>
+                </div>
+
+                <!-- 经历3 -->
+                <div class="timeline-item">
+                    <div class="timeline-date">2021-08 至 2023-05</div>
+                    <h3 class="timeline-title">泰康集团 Taikang Group</h3>
+                    <p class="timeline-subtitle">技术总监 / AI领军人物 / 教授级高级工程师</p>
+                    <ul class="timeline-bullets">
+                        <li>主持健康险数据采集平台建设（经费400万元）</li>
+                        <li>主导风控大脑、医疗信息自动抽取工具研发</li>
+                        <li>构建客户健康档案（画像）系统</li>
+                    </ul>
+                </div>
+
+                <!-- 经历4 -->
+                <div class="timeline-item">
+                    <div class="timeline-date">2020-04 至 2021-08</div>
+                    <h3 class="timeline-title">联仁健康医疗大数据科技 Lianjian Health</h3>
+                    <p class="timeline-subtitle">数据平台部副总 / 高级工程师</p>
+                    <ul class="timeline-bullets">
+                        <li>负责国家级医疗大数据平台 、人工智能算法 、人数据标注平台 、AI 训练平台 、开放平台及数据治理工具与上层应用的产品研发管理 、 内部项目孵化 、投资决策支持； 省部级重大项目申报</li>
+                        <li>训练当时业界最大规模中文电子病历预训练模型之一及子任务的 benchmark</li>
+                    </ul>
+                </div>
+
+                <!-- 经历5 -->
+                <div class="timeline-item">
+                    <div class="timeline-date">2018-08 至 2020-05</div>
+                    <h3 class="timeline-title">创新工场 AI 工程院 Sinovation Ventures AI Lab</h3>
+                    <p class="timeline-subtitle">技术总监 / 高级工程师</p>
+                    <ul class="timeline-bullets">
+                        <li>负责医疗Lab，成功孵化量健智能并担任CTO</li>
+                        <li>主导QBrain神经影像云平台、QBehavior行为学量化系统</li>
+                        <li>获千万级融资，推动医疗AI商业化落地</li>
+                    </ul>
+                </div>
+
+
+                <!-- 经历7 -->
+                <div class="timeline-item">
+                    <div class="timeline-date">2009-07 至 2016-08</div>
+                    <h3 class="timeline-title">中国移动总部 China Mobile</h3>
+                    <p class="timeline-subtitle">数据科学家 / 项目经理 / 高级工程师</p>
+                    <ul class="timeline-bullets">
+                        <li>主导集团信息系统战略规划与DSS决策支持系统建设</li>
+                        <li>研发DSpammer不良信息治理平台，支撑10亿用户，人工审核量从21人降低到7人，垃圾短信下降45%，确认违规号码增加5倍，年成本降低1.3亿元，每年避免诈骗金额~50亿元</li>
+                        <li>获中央企业信息化示范工程决策类第一名（2009年）</li>
+                        <li>荣获移动技术管理最高奖：先进科技管理工作者</li>
+                    </ul>
+                </div>
+
+                <!-- 经历8 -->
+                <div class="timeline-item">
+                    <div class="timeline-date">2007-05 至 2007-11</div>
+                    <h3 class="timeline-title">贝尔实验室 Bell Labs</h3>
+                    <p class="timeline-subtitle">实习研究员 Research Intern</p>
+                    <p class="timeline-description">
+                        参与无线通信系统优化算法研究
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================
+             科研项目
+             ============================================ -->
+        <section id="research" class="section">
+            <h2 class="section-title">科研项目 Research Projects</h2>
+            <div class="projects-grid">
+                <!-- 项目1 -->
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3 class="project-title">面向PB级多源卫生健康科学大数据的智能分析与挖掘关键技术及示范应用</h3>
+                    </div>
+                    <div class="project-meta">
+                        <div class="project-meta-item">
+                            <strong>来源：</strong>科技部国家重点研发计划
+                        </div>
+                        <div class="project-meta-item">
+                            <strong>编号：</strong>2021YFF0704100
+                        </div>
+                    </div>
+                    <div class="project-meta">
+                        <div class="project-meta-item">
+                            <strong>时间：</strong>2021-12 至 2025-11
+                        </div>
+                        <div class="project-meta-item">
+                            <strong>经费：</strong>1747.2万元
+                        </div>
+                    </div>
+                    <div style="margin-top: 12px;">
+                        <span class="project-role">参与</span>
+                    </div>
+                </div>
+
+                <!-- 项目2 -->
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3 class="project-title">医疗健康人工智能共享平台</h3>
+                    </div>
+                    <div class="project-meta">
+                        <div class="project-meta-item">
+                            <strong>来源：</strong>上海市经信委创新发展专项
+                        </div>
+                        <div class="project-meta-item">
+                            <strong>编号：</strong>2017896
+                        </div>
+                    </div>
+                    <div class="project-meta">
+                        <div class="project-meta-item">
+                            <strong>时间：</strong>2021-01 至 2023-12
+                        </div>
+                        <div class="project-meta-item">
+                            <strong>经费：</strong>1780万元
+                        </div>
+                    </div>
+                    <div style="margin-top: 12px;">
+                        <span class="project-role" style="background: #d32f2f;">主持</span>
+                    </div>
+                </div>
+
+                <!-- 项目3 -->
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3 class="project-title">健康险数据采集平台</h3>
+                    </div>
+                    <div class="project-meta">
+                        <div class="project-meta-item">
+                            <strong>来源：</strong>泰康集团创新研发项目
+                        </div>
+                    </div>
+                    <div class="project-meta">
+                        <div class="project-meta-item">
+                            <strong>时间：</strong>2022-06 至 2023-05
+                        </div>
+                        <div class="project-meta-item">
+                            <strong>经费：</strong>400万元
+                        </div>
+                    </div>
+                    <div style="margin-top: 12px;">
+                        <span class="project-role" style="background: #d32f2f;">主持</span>
+                    </div>
+                </div>
+
+                <!-- 项目4 -->
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3 class="project-title">医疗大数据应用技术国家工程实验室</h3>
+                    </div>
+                    <div class="project-meta">
+                        <div class="project-meta-item">
+                            <strong>来源：</strong>国家发改委
+                        </div>
+                        <div class="project-meta-item">
+                            <strong>经费：</strong>8000万元
+                        </div>
+                    </div>
+                    <div style="margin-top: 12px;">
+                        <span class="project-role">参与</span>
+                    </div>
+                </div>
+            </div>
+            <p style="margin-top: 30px; color: var(--text-light); font-size: 15px; text-align: center;">
+                累计主导/参与项目经费逾<strong style="color: var(--secondary-color); font-size: 18px;">2.3亿元人民币</strong>
+            </p>
+        </section>
+
+        <!-- ============================================
+             关键技术成果
+             ============================================ -->
+        <section id="achievements" class="section">
+            <h2 class="section-title">关键技术成果 Key Achievements</h2>
+            <div class="achievements-grid">
+                <!-- 成果1 -->
+                <div class="achievement-card">
+                    <h3 class="achievement-title">DSpammer 不良信息治理平台</h3>
+                    <ul class="achievement-metrics">
+                        <li>支撑用户：<span class="metric-highlight">10亿</span></li>
+                        <li>垃圾短信下降：<span class="metric-highlight">45%</span></li>
+                        <li>确认违规号码增加：<span class="metric-highlight">5倍</span></li>
+                        <li>年成本降低：<span class="metric-highlight">1.3亿元</span></li>
+                        <li>每年避免诈骗金额：<span class="metric-highlight">~50亿元</span></li>
+                        <li>🏆 2009年国资委央企信息化示范工程第1名</li>
+                        <li>🌐 GSMA最佳案例唯一亚洲代表</li>
+                    </ul>
+                </div>
+
+                <!-- 成果2 -->
+                <div class="achievement-card">
+                    <h3 class="achievement-title">AIHealth 医疗健康AI共享平台</h3>
+                    <ul class="achievement-metrics">
+                        <li>标注成本降至：<span class="metric-highlight">1/10</span></li>
+                        <li>智能编码人工替代率：<span class="metric-highlight">54.8%</span></li>
+                        <li>病历结构化准确率：<span class="metric-highlight">&gt;90%</span></li>
+                        <li>🏆 2021数字中国创新大赛A榜第1名</li>
+                    </ul>
+                </div>
+
+                <!-- 成果3 -->
+                <div class="achievement-card">
+                    <h3 class="achievement-title">QBrain 神经影像量化分析平台</h3>
+                    <ul class="achievement-metrics">
+                        <li>全脑分割区域：<span class="metric-highlight">96个</span></li>
+                        <li>分割误差率：<span class="metric-highlight">0.6%</span>（传统算法10%）</li>
+                        <li>处理时间缩短：<span class="metric-highlight">97%</span></li>
+                        <li>部署机构：宣武医院等多家三甲医院</li>
+                    </ul>
+                </div>
+
+                <!-- 成果4 -->
+                <div class="achievement-card">
+                    <h3 class="achievement-title">量健智能（孵化公司）</h3>
+                    <ul class="achievement-metrics">
+                        <li>职位：<span class="metric-highlight">联合创始人 & CTO</span></li>
+                        <li>融资金额：<span class="metric-highlight">1000万元</span></li>
+                        <li>方向：神经影像AI分析与认知评估</li>
+                        <li>成果：0-1成功孵化并实现商业化</li>
+                    </ul>
+                </div>
+
+                <!-- 成果5 -->
+                <div class="achievement-card">
+                    <h3 class="achievement-title">镝伽机器人（孵化参与）</h3>
+                    <ul class="achievement-metrics">
+                        <li>角色：<span class="metric-highlight">数智顾问</span></li>
+                        <li>C轮融资：<span class="metric-highlight">3亿美元</span></li>
+                        <li>领域：生命科学自动化与智能制造</li>
+                        <li>贡献：数据智能体系构建与战略咨询</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================
+             学术论文
+             ============================================ -->
+        <section id="publications" class="section">
+            <h2 class="section-title">学术论文 Publications</h2>
+            <ul class="publications-list">
+                <!-- 论文1 -->
+                <li class="publication-item">
+                    <div class="publication-authors"><strong>Zhang X.</strong>, Tao M., Ng C.S.</div>
+                    <div class="publication-title">"End-to-End Outage Minimization in OFDM Based Linear Relay Networks"</div>
+                    <div class="publication-venue">IEEE Transactions on Communications, 2009, 57(10): 3034–3044.</div>
+                    <span class="badge badge-sci">SCI 一区</span>
+                </li>
+
+                <!-- 论文2 -->
+                <li class="publication-item">
+                    <div class="publication-authors"><strong>Zhang X.</strong> et al.</div>
+                    <div class="publication-title">"Utility-based wireless resource allocation for variable rate transmission"</div>
+                    <div class="publication-venue">IEEE Transactions on Wireless Communications, 2008, 7(9): 3292–3296.</div>
+                    <span class="badge badge-sci">SCI 一区</span>
+                </li>
+
+                <!-- 论文3 -->
+                <li class="publication-item">
+                    <div class="publication-authors"><strong>Zhang X.</strong> et al.</div>
+                    <div class="publication-title">"End-to-end resource allocation in OFDM based linear multi-hop networks"</div>
+                    <div class="publication-venue">IEEE INFOCOM 2008, Phoenix, Arizona, USA.</div>
+                    <span class="badge badge-ccf">CCF A类会议</span>
+                </li>
+
+                <!-- 论文4-10 -->
+                <li class="publication-item">
+                    <div class="publication-authors"><strong>Zhang X.</strong> et al.</div>
+                    <div class="publication-title">其他IEEE系列期刊与会议论文（共7篇）</div>
+                    <div class="publication-venue">发表于IEEE Transactions、INFOCOM等高水平期刊与会议</div>
+                    <span class="badge badge-ei">EI检索</span>
+                </li>
+            </ul>
+            <p style="margin-top: 20px; color: var(--text-light); text-align: center;">
+                累计发表高水平学术论文 <strong style="color: var(--secondary-color); font-size: 18px;">10篇</strong>，其中SCI一区论文2篇，CCF A类会议1篇
+            </p>
+        </section>
+
+        <!-- ============================================
+             专利成果
+             ============================================ -->
+        <section id="patents" class="section">
+            <h2 class="section-title">专利成果 Patents</h2>
+            <ul class="patents-list">
+                <!-- 前10项专利 -->
+                <li class="patent-item">
+                    <div class="patent-title">一种基于图思想的智能产品推荐方法、装置及电子设备</div>
+                    <div class="patent-number">CN202511301295.0</div>
+                </li>
+                <li class="patent-item">
+                    <div class="patent-title">数字病理切片由HE染色到IHC染色的计算机自动生成方法</div>
+                    <div class="patent-number">CN110246116A</div>
+                </li>
+                <li class="patent-item">
+                    <div class="patent-title">一种问题处理方法、装置、电子设备和存储介质</div>
+                    <div class="patent-number">CN202311462023.X</div>
+                </li>
+                <li class="patent-item">
+                    <div class="patent-title">一种图像分级方法、装置、存储介质及电子设备</div>
+                    <div class="patent-number">ZL202110641027.9</div>
+                </li>
+                <li class="patent-item">
+                    <div class="patent-title">一种图像处理方法、装置、存储介质及电子设备</div>
+                    <div class="patent-number">ZL202110158182.5</div>
+                </li>
+                <li class="patent-item">
+                    <div class="patent-title">模型训练方法、装置、设备和存储介质</div>
+                    <div class="patent-number">ZL202110597904.7</div>
+                </li>
+                <li class="patent-item">
+                    <div class="patent-title">图像分类方法、装置、电子设备及存储介质</div>
+                    <div class="patent-number">ZL202110475943.X</div>
+                </li>
+                <li class="patent-item">
+                    <div class="patent-title">一种检验数据标准化的方法、装置、电子设备和存储介质</div>
+                    <div class="patent-number">ZL202111015345.0</div>
+                </li>
+                <li class="patent-item">
+                    <div class="patent-title">药品信息的处理方法、装置、电子设备及存储介质</div>
+                    <div class="patent-number">ZL202110610737.5</div>
+                </li>
+                <li class="patent-item">
+                    <div class="patent-title">显示元素方法、装置、电子设备及存储介质</div>
+                    <div class="patent-number">ZL202110428999.X</div>
+                </li>
+
+                <!-- 隐藏的额外专利 -->
+                <li class="patent-item hidden" data-hidden="true">
+                    <div class="patent-title">一种医学图像及视频内容隐私保护方法</div>
+                    <div class="patent-number">专利申请中</div>
+                </li>
+                <li class="patent-item hidden" data-hidden="true">
+                    <div class="patent-title">一种高质量医疗序列数据关键帧选取技术</div>
+                    <div class="patent-number">专利申请中</div>
+                </li>
+                <li class="patent-item hidden" data-hidden="true">
+                    <div class="patent-title">一种衡量疾病药品适应性的方法</div>
+                    <div class="patent-number">专利申请中</div>
+                </li>
+                <li class="patent-item hidden" data-hidden="true">
+                    <div class="patent-title">一种医疗图像大规模分类智能建库系统</div>
+                    <div class="patent-number">专利申请中</div>
+                </li>
+                <li class="patent-item hidden" data-hidden="true">
+                    <div class="patent-title">基于多特征融合的药品名称归一化方法</div>
+                    <div class="patent-number">专利申请中</div>
+                </li>
+                <li class="patent-item hidden" data-hidden="true">
+                    <div class="patent-title">基于新词发现的电子病历实体抽取方法</div>
+                    <div class="patent-number">专利申请中</div>
+                </li>
+                <li class="patent-item hidden" data-hidden="true">
+                    <div class="patent-title">一种人脸整形模拟通用方法</div>
+                    <div class="patent-number">专利申请中</div>
+                </li>
+                <li class="patent-item hidden" data-hidden="true">
+                    <div class="patent-title">一种基于单目摄像头或惯性测量单元的帕金森病症状自动评估方法</div>
+                    <div class="patent-number">专利申请中</div>
+                </li>
+            </ul>
+
+            <div class="patents-toggle">
+                <button class="toggle-btn" id="togglePatentsBtn">展开全部专利 ▼</button>
+            </div>
+
+            <p style="margin-top: 30px; color: var(--text-light); text-align: center;">
+                累计申报专利 <strong style="color: var(--secondary-color); font-size: 18px;">30+项</strong>，涵盖医学影像、NLP、知识图谱、隐私计算等领域
+            </p>
+        </section>
+
+                <!-- ============================================
+             学术任职
+             ============================================ -->
+             <section id="patents" class="section">
+                <h2 class="section-title">学术任职 Academic Appointments</h2>
+                <ul class="patent-list">
+                    <li class="patent-item">
+                        <div class="patent-title">北京理工大学</div>
+                        <div class="patent-number">企业博士导师</div>
+                    </li>
+                    <li class="patent-item">
+                        <div class="patent-title">健康医疗大数据专业委员会</div>
+                        <div class="patent-number">常委</div>
+                    </li>
+                    <li class="patent-item">
+                        <div class="patent-title">广东省医学会医学人工智能分会</div>
+                        <div class="patent-number">委员</div>
+                    </li>
+                    <li class="patent-item">
+                        <div class="patent-title">国家妇女健康与人工智能专委会</div>
+                        <div class="patent-number">委员</div>
+                    </li>
+                </ul>
+            </section>
+
+
+
+        <!-- ============================================
+             荣誉奖项
+             ============================================ -->
+        <section id="awards" class="section">
+            <h2 class="section-title">荣誉奖项 Honors & Awards</h2>
+            <ul class="awards-list">
+                <!-- 奖项1 -->
+                <li class="award-item">
+                    <div class="award-icon">🏆</div>
+                    <div class="award-content">
+                        <div class="award-year">2019</div>
+                        <div class="award-title">世界互联网大会"中国30位新生代数字经济人才"</div>
+                    </div>
+                </li>
+
+                <!-- 奖项2 -->
+                <li class="award-item">
+                    <div class="award-icon">🥇</div>
+                    <div class="award-content">
+                        <div class="award-year">2021</div>
+                        <div class="award-title">数字中国创新大赛 A榜第1名（AIHealth医疗健康AI共享平台）</div>
+                    </div>
+                </li>
+
+                <!-- 奖项3 -->
+                <li class="award-item">
+                    <div class="award-icon">🥇</div>
+                    <div class="award-content">
+                        <div class="award-year">2009</div>
+                        <div class="award-title">国资委中央企业信息化示范工程 决策类第1名（DSpammer平台）</div>
+                    </div>
+                </li>
+
+                <!-- 奖项4 -->
+                <li class="award-item">
+                    <div class="award-icon">🥈</div>
+                    <div class="award-content">
+                        <div class="award-year">2019</div>
+                        <div class="award-title">北京医管局科技创新决赛 第2名</div>
+                    </div>
+                </li>
+
+                <!-- 奖项5 -->
+                <li class="award-item">
+                    <div class="award-icon">🏆</div>
+                    <div class="award-content">
+                        <div class="award-year">2017</div>
+                        <div class="award-title">清华大学校长杯创业大赛 第一名</div>
+                    </div>
+                </li>
+
+                <!-- 奖项6 -->
+                <li class="award-item">
+                    <div class="award-icon">🌐</div>
+                    <div class="award-content">
+                        <div class="award-year">2010</div>
+                        <div class="award-title">GSMA不良信息治理最佳案例 唯一亚洲代表发言</div>
+                    </div>
+                </li>
+
+                <!-- 奖项7 -->
+                <li class="award-item">
+                    <div class="award-icon">⭐</div>
+                    <div class="award-content">
+                        <div class="award-year">2015</div>
+                        <div class="award-title">中国移动技术管理最高奖：先进科技管理工作者</div>
+                    </div>
+                </li>
+            </ul>
+        </section>
+
+    </main>
+
+    <!-- ============================================
+         页脚
+         ============================================ -->
+    <footer>
+        <p>&copy; 2025 张晓璐 Zhang Xiaolu. All rights reserved.</p>
+        <p style="margin-top: 8px; font-size: 13px;">最后更新：2025年3月 | Last Updated: March 2025</p>
+    </footer>
+
+    <!-- ============================================
+         JavaScript 交互逻辑
+         ============================================ -->
+    <script>
+        // ============================================
+        // 移动端菜单切换
+        // ============================================
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const sidebar = document.getElementById('sidebar');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            sidebar.classList.toggle('active');
+        });
+
+        // 点击菜单项后在移动端自动关闭侧边栏
+        const navLinks = document.querySelectorAll('.nav-link');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                if (window.innerWidth <= 1024) {
+                    sidebar.classList.remove('active');
+                }
+            });
+        });
+
+        // 点击页面其他区域关闭侧边栏
+        document.addEventListener('click', (e) => {
+            if (window.innerWidth <= 1024 && 
+                !sidebar.contains(e.target) && 
+                !mobileMenuBtn.contains(e.target) &&
+                sidebar.classList.contains('active')) {
+                sidebar.classList.remove('active');
+            }
+        });
+
+        // ============================================
+        // 导航栏高亮当前区域
+        // ============================================
+        const sections = document.querySelectorAll('.section, #hero');
+        const navItems = document.querySelectorAll('.nav-link');
+
+        function setActiveNav() {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (pageYOffset >= sectionTop - 200) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navItems.forEach(item => {
+                item.classList.remove('active');
+                if (item.getAttribute('href') === '#' + current) {
+                    item.classList.add('active');
+                }
+            });
+        }
+
+        window.addEventListener('scroll', setActiveNav);
+        window.addEventListener('load', setActiveNav);
+
+        // ============================================
+        // 专利列表展开/收起
+        // ============================================
+        const toggleBtn = document.getElementById('togglePatentsBtn');
+        const hiddenPatents = document.querySelectorAll('.patent-item[data-hidden="true"]');
+
+        let patentsExpanded = false;
+
+        toggleBtn.addEventListener('click', () => {
+            patentsExpanded = !patentsExpanded;
+            
+            hiddenPatents.forEach(patent => {
+                if (patentsExpanded) {
+                    patent.classList.remove('hidden');
+                } else {
+                    patent.classList.add('hidden');
+                }
+            });
+
+            toggleBtn.textContent = patentsExpanded ? '收起专利 ▲' : '展开全部专利 ▼';
+        });
+
+        // ============================================
+        // 平滑滚动（兼容旧浏览器）
+        // ============================================
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // ============================================
+        // 统计数字动画（可选）
+        // ============================================
+        function animateValue(element, start, end, duration, suffix = '') {
+            let startTimestamp = null;
+            const step = (timestamp) => {
+                if (!startTimestamp) startTimestamp = timestamp;
+                const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+                const value = Math.floor(progress * (end - start) + start);
+                element.textContent = value + suffix;
+                if (progress < 1) {
+                    window.requestAnimationFrame(step);
+                }
+            };
+            window.requestAnimationFrame(step);
+        }
+
+        // 当统计卡片进入视口时触发动画
+        const statsObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting && !entry.target.dataset.animated) {
+                    const statNumber = entry.target.querySelector('.stat-number');
+                    const text = statNumber.textContent;
+                    const match = text.match(/(\d+\.?\d*)(.*)/);
+                    if (match) {
+                        const value = parseFloat(match[1]);
+                        const suffix = match[2];
+                        animateValue(statNumber, 0, value, 1500, suffix);
+                        entry.target.dataset.animated = 'true';
+                    }
+                }
+            });
+        }, { threshold: 0.5 });
+
+        document.querySelectorAll('.stat-card').forEach(card => {
+            statsObserver.observe(card);
+        });
+
+        // ============================================
+        // 打印功能优化
+        // ============================================
+        window.addEventListener('beforeprint', () => {
+            // 打印前展开所有专利
+            hiddenPatents.forEach(patent => {
+                patent.classList.remove('hidden');
+            });
+        });
+
+        window.addEventListener('afterprint', () => {
+            // 打印后恢复状态
+            if (!patentsExpanded) {
+                hiddenPatents.forEach(patent => {
+                    patent.classList.add('hidden');
+                });
+            }
+        });
+    </script>
+
+</body>
+</html>
